@@ -6,6 +6,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -14,6 +22,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TodoComponent
   ],
   imports: [
+    MatInputModule,
+    FormsModule,
+    MatSlideToggleModule,
+    MatListModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
