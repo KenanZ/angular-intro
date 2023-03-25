@@ -15,13 +15,29 @@ export class TodoComponent {
   ];
 
 ngOnInit(): void{
-  // alert('aaa');
+  const tasksAsString = localStorage.getItem("tasks");
+  if (tasksAsString)
+    this.tasks=JSON.parse(tasksAsString);
   console.table(this.tasks);
 }
 
 add() {
   this.tasks.push({title:this.title, completed:false})
   this.title='';
+  this.save();
+}
+
+deleteTask(TaskToDelete:Task){
+  this.tasks=this.tasks.filter(tt=>tt!=TaskToDelete);
+  this.save();
+}
+
+save(){
+  localStorage.setItem("tasks",JSON.stringify(this.tasks));
+}
+
+completed(){
+  return this.tasks.filter(t=>t.completed).length;
 }
 
 }
